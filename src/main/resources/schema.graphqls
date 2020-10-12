@@ -1,0 +1,51 @@
+type UserNotification{
+	id: String!
+	username:String
+	notificationId:Notification
+	eventDate:String
+	title:String
+	desc:String
+	icon:String
+	username:String
+	deleted:Boolean
+	read:Boolean
+	type:String;
+}
+
+type Notification{
+
+	id:String!;
+
+	name:String;
+
+	type:String;
+
+	title:String;
+
+	desc:String;
+
+	icon:String;
+
+	active:Boolean;
+
+	onEmail:Boolean;
+
+	onNotification:Boolean;
+
+	createdAt:String;
+	
+	updatedDate:String;
+	
+	startDate:String;
+	
+	endDate:String;
+}
+
+type Query{
+	userNotification:[UserNotification]
+	byUsername(username : String) : [UserNotification]
+}
+
+schema{
+	query: Query
+}
